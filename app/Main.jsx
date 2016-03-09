@@ -6,14 +6,15 @@
 import React from 'react';
 import RaisedButton from 'material-ui/lib/raised-button';
 import Dialog from 'material-ui/lib/dialog';
-import { deepOrange500 } from 'material-ui/lib/styles/colors';
+import { teal500 } from 'material-ui/lib/styles/colors';
 import FlatButton from 'material-ui/lib/flat-button';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
-import Container from './components/box/Container.jsx';
+import {Grid, Row, Col} from 'react-flexbox-grid/lib';
+import ProcedureForm from './components/form/ProcedureForm.jsx';
 const muiTheme = getMuiTheme({
     palette: {
-        accent1Color: deepOrange500
+        accent1Color: teal500
     }
 });
 
@@ -46,31 +47,36 @@ class Main extends React.Component {
                 label='Okey'
                 secondary={true}
                 onTouchTap={this.handleRequestClose}
+                keyboardFocused={true}
             />
         );
 
         return (
-            <Container xs={12} sm={3} md={2} lg={1}>
-                <MuiThemeProvider muiTheme={muiTheme}>
-                    <div>
-                        <Dialog
-                            open={this.state.open}
-                            title='Super Secret Password'
-                            actions={standardActions}
-                            onRequestClose={this.handleRequestClose}
-                            >
-                            1-2-3-4-5
-                        </Dialog>
-                        <h1>material-ui</h1>
-                        <h2>example project</h2>
-                        <RaisedButton
-                          label='Super Secret Password'
-                          primary={true}
-                          onTouchTap={this.handleTouchTap}
-                        />
-                    </div>
-                </MuiThemeProvider>
-          </Container>
+            <Grid>
+                <Row center='xs' center='md' around='xs' around='md'>
+                    <Col xs={6} sm={6} md={6} lg={6} >
+                        <MuiThemeProvider muiTheme={muiTheme}>
+                            <div>
+                                <Dialog
+                                    open={this.state.open}
+                                    title='Super Secret Password'
+                                    actions={standardActions}
+                                    onRequestClose={this.handleRequestClose}
+                                    >
+                                    <ProcedureForm />
+                                </Dialog>
+                                <h1>material-ui</h1>
+                                <h2>example project</h2>
+                                <RaisedButton
+                                  label='Hazme Click ctm'
+                                  primary={true}
+                                  onTouchTap={this.handleTouchTap}
+                                />
+                            </div>
+                        </MuiThemeProvider>
+                    </Col>
+                </Row>
+            </Grid>
         );
     }
 }

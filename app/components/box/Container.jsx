@@ -1,13 +1,14 @@
 import React from 'react';
-import {Grid, Row, Col} from 'react-flexbox-grid/lib';
+import {Grid} from 'react-flexbox-grid/lib';
+import {Row, Col} from 'react-materialize';
 
-export default class Container extends React.Component {
+export default class Layout extends React.Component {
     render() {
         const { children, ...props } = this.props;
         return (
             <Grid>
-                <Row center='md' center='xs'>
-                    <Col type='container' {...props} >
+                <Row>
+                    <Col {...props} >
                         {children}
                     </Col>
                 </Row>

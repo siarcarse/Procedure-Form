@@ -19822,7 +19822,6 @@
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * which incorporates components providedby material-ui.
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
-	console.log(_Container2.default);
 	var muiTheme = (0, _getMuiTheme2.default)({
 	    palette: {
 	        accent1Color: _colors.deepOrange500
@@ -30789,21 +30788,22 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Container = function (_React$Component) {
-	    _inherits(Container, _React$Component);
+	var Layout = function (_React$Component) {
+	    _inherits(Layout, _React$Component);
 
-	    function Container() {
-	        _classCallCheck(this, Container);
+	    function Layout() {
+	        _classCallCheck(this, Layout);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Container).apply(this, arguments));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Layout).apply(this, arguments));
 	    }
 
-	    _createClass(Container, [{
+	    _createClass(Layout, [{
 	        key: 'render',
 	        value: function render() {
-	            var children = props.children;
+	            var _props = this.props;
+	            var children = _props.children;
 
-	            var props = _objectWithoutProperties(props, ['children']);
+	            var props = _objectWithoutProperties(_props, ['children']);
 
 	            return _react2.default.createElement(
 	                _lib.Grid,
@@ -30813,18 +30813,31 @@
 	                    _defineProperty({ center: 'md' }, 'center', 'xs'),
 	                    _react2.default.createElement(
 	                        _lib.Col,
-	                        _extends({ type: 'container' }, this.props),
-	                        this.props.children
+	                        _extends({ type: 'container' }, props),
+	                        children
 	                    )
 	                )
 	            );
 	        }
 	    }]);
 
-	    return Container;
+	    return Layout;
 	}(_react2.default.Component);
+	/*const Layout = React.createClass({
+	    render() {
+	        return (
+	            <Grid>
+	                <Row>
+	                    <Col xs={6} md={3}>Hello, world!</Col>
+	                </Row>
+	            </Grid>
+	        );
+	    }
+	});
+	export default Layout;*/
 
-	exports.default = Container;
+
+	exports.default = Layout;
 
 /***/ },
 /* 235 */

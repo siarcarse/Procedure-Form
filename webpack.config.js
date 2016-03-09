@@ -22,7 +22,7 @@ const common = {
         app: PATHS.app
     },
     resolve: {
-        extensions: ['', '.jsx', '.scss', '.js', '.json'], // along the way, subsequent file(s) to be consumed by webpack
+        extensions: ['', '.jsx', '.scss', '.js', '.json', 'css'], // along the way, subsequent file(s) to be consumed by webpack
         modulesDirectories: [
             'node_modules',
             path.resolve(__dirname, './node_modules')
@@ -42,6 +42,10 @@ const common = {
         }, {
             test: /(\.scss|\.css)$/,
             loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap')
+        }, {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'sass'],
+            include: PATHS.style
         }],
         preLoaders: [{
             test: /\.jsx?$/,
@@ -67,6 +71,7 @@ if (TARGET === 'start' || !TARGET) {
             host: process.env.HOST,
             port: process.env.PORT
         },
+        postcss: [autoprefixer],
         plugins: [
             new ExtractTextPlugin('example.css', { allChunks: true }), // compiled css (single file only)
             new webpack.NoErrorsPlugin(),
