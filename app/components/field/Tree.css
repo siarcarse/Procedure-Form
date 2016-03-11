@@ -1,9 +1,44 @@
 .rc-tree-select-selection--multiple {
     max-height: 50px;
     overflow-y: scroll;
+    z-index: 9999;
 }
 
 .rc-tree-select-dropdown {
     max-height: 350px;
     overflow-y: scroll;
+    z-index: 9999;
+}
+.showExamsList {
+    top: 191px;
+    z-index: 999;
+    opacity: 1;
+    pointer-events: auto;
+    width: 400px;
+    position: relative;
+    background: #ffffff;
+    max-width: 610px;
+    max-height: 300px;
+    width: 52%;
+    overflow-x: overlay;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(115, 115, 115, 0.61);
+}
+
+.showSearchExam {
+    top: 158px;
+    z-index: 999;
+    opacity: 1;
+    pointer-events: auto;
+    width: 400px;
+    position: relative;
+    background: #ffffff;
+    max-width: 610px;
+    max-height: 300px;
+    width: 52%;
+    overflow-x: overlay;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(115, 115, 115, 0.61);
 }

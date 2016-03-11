@@ -8,8 +8,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import Dialog from 'material-ui/lib/dialog';
 import { indigo500 } from 'material-ui/lib/styles/colors';
 import FlatButton from 'material-ui/lib/flat-button';
-import {Row, Col} from 'react-flexbox-grid/lib';
-import Grid from './components/box/Container.jsx';
+import {Grid, Row, Col} from './components/box/Container.jsx';
 import ProcedureForm from './components/form/ProcedureForm.jsx';
 import CardPanel from './components/box/Card.jsx';
 import Styles from './styles/Style.jsx';
@@ -52,11 +51,10 @@ class Main extends React.Component {
                 keyboardFocused={true}
             />
         );
-
         return (
             <Grid>
                 <Row center='xs' center='md' around='xs' around='md'>
-                    <Col xs={6} sm={6} md={6} lg={6} >
+                    <Col type='col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center' >
                         <Styles color='indigo500'>
                             <Dialog
                                 open={this.state.open}

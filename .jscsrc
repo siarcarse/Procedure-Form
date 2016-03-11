@@ -23,6 +23,7 @@
 
   "excludeFiles": [
     "dist/**",
-    "node_modules/**"
+    "node_modules/**",
+    "app/components/field/**"
   ]
 }

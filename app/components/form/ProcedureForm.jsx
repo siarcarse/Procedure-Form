@@ -2,8 +2,9 @@ import React from 'react';
 import TextField from 'material-ui/lib/text-field';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
 import TimePicker from 'material-ui/lib/time-picker/time-picker';
-import {Row, Col} from 'react-flexbox-grid/lib';
+import {Row, Col} from '../box/Container.jsx';
 import TreeField from '../field/TreeField.jsx';
+
 export default class ProcedureForm extends React.Component {
     constructor(props) {
         super(props);
@@ -22,7 +23,7 @@ export default class ProcedureForm extends React.Component {
     render() {
         return (
             <Row>
-                <Col xs={6} sm={6} md={6} lg={6}>
+                <Col type='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
                     <DatePicker
                         hintText='Portrait Dialog'
                         value={this.state.controlledDate}
@@ -31,24 +32,35 @@ export default class ProcedureForm extends React.Component {
                         disabled={true}
                     />
                 </Col>
-                <Col xs={6} sm={6} md={6} lg={6}>
+                <Col type='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+                    <TextField
+                        hintText='Ej: 123123123-3'
+                        floatingLabelText='Ingrese Rut'
+                    />
+                </Col>
+                <Col type='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
                     <TimePicker
+                        style={{marginTop: '-10px'}}
                         format='24hr'
                         value={this.state.controlledTime}
                         autoOk={true}
                         disabled={true}
                     />
                 </Col>
-                <Col xs={6} sm={6} md={6} lg={6}>
+                <Col type='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
                     <TreeField />
                 </Col>
-                <Col xs={6} sm={6} md={6} lg={6}>
+                <Col type='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
                     <TextField
                         hintText='Hint Text'
                         floatingLabelText='Floating Label Text'
                     />
                 </Col>
-                <br/>
+            </Row>
+        );
+    }
+}
+/*<br/>
                 <TextField
                     defaultValue='Default Value'
                 />
@@ -75,8 +87,4 @@ export default class ProcedureForm extends React.Component {
                     floatingLabelText='MultiLine and FloatingLabel'
                     multiLine={true}
                     rows={2}
-                />
-            </Row>
-        );
-    }
-}
+                />*/

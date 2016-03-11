@@ -13,12 +13,7 @@ export default class Styles extends React.Component {
         const colorTheme = color || 'teal500';
         const muiTheme = getMuiTheme({
             palette: {
-                accent1Color: colors[colorTheme],
-                primary1Color: colors.red500,
-                alternateTextColor: colors.grey50
-            },
-            flatButton: {
-                color: colors[colorTheme]
+                accent1Color: colors[colorTheme]
             }
         });
         return (

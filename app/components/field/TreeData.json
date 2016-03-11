@@ -1,0 +1,289 @@
+data: [{
+    "id": "641",
+    "code": "0403001",
+    "duration": "30",
+    "text": "0403001 -  Cerebro -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "642",
+    "code": "0403002",
+    "duration": "30",
+    "text": "0403002 - Hipotalamo-hip\u00f3fisis  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "643",
+    "code": "0403003",
+    "duration": "30",
+    "text": "0403003 - Fosa posterior -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "644",
+    "code": "0403004",
+    "duration": "30",
+    "text": "0403004 -  Cortes coronales complementarios  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "645",
+    "code": "0403006",
+    "duration": "30",
+    "text": "0403006 -  Temporal-o\u00eddo  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "646",
+    "code": "0403007",
+    "duration": "30",
+    "text": "0403007 -  Orbitas maxilofacial  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "647",
+    "code": "0403008",
+    "duration": "30",
+    "text": "0403008 -  Columna cervical  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "648",
+    "code": "0403009",
+    "duration": "30",
+    "text": "0403009 -  Columna dorsal o lumbar  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "649",
+    "code": "0403010",
+    "duration": "5",
+    "text": "0403010 -  Cada espacio adicional  -  5 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "650",
+    "code": "0403012",
+    "duration": "30",
+    "text": "0403012 -  Cuello,partes blandas - 30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "651",
+    "code": "0403013",
+    "duration": "30",
+    "text": "0403013 -  T\u00f3rax total -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "652",
+    "code": "0403014",
+    "duration": "30",
+    "text": "0403014 -  Abdomen  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": [{
+        "id": "977",
+        "code": "TACPIELO",
+        "duration": "30",
+        "text": "TACPIELO - Tac Pielo -  30 Min.",
+        "state": [{
+            "opened": "false",
+            "selected": "false"
+        }],
+        "children": null,
+        "lastChild": "yes",
+        "icon": "glyphicon glyphicon-minus"
+    }, {
+        "id": "978",
+        "code": "TACAB",
+        "duration": "30",
+        "text": "TACAB - Tac Abdomen -  30 Min.",
+        "state": [{
+            "opened": "false",
+            "selected": "false"
+        }],
+        "children": null,
+        "lastChild": "yes",
+        "icon": "glyphicon glyphicon-minus"
+    }, {
+        "id": "979",
+        "code": "TACAP",
+        "duration": "30",
+        "text": "TACAP - Tac Abdomen - Pelvis -  30 Min.",
+        "state": [{
+            "opened": "false",
+            "selected": "false"
+        }],
+        "children": null,
+        "lastChild": "yes",
+        "icon": "glyphicon glyphicon-minus"
+    }],
+    "lastChild": "no",
+    "icon": ""
+}, {
+    "id": "678",
+    "code": "0403014P",
+    "duration": "30",
+    "text": "0403014P - TAC PIELO -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "653",
+    "code": "0403016",
+    "duration": "30",
+    "text": "0403016 -  Pelvis  -  30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": null,
+    "lastChild": "yes",
+    "icon": "glyphicon glyphicon-minus"
+}, {
+    "id": "654",
+    "code": "0403017",
+    "duration": "30",
+    "text": "0403017 -  Extremidades,estudio localizado - 30 Min.",
+    "state": [{
+        "opened": "false",
+        "selected": "false"
+    }],
+    "children": [{
+        "id": "986",
+        "code": "TOBILLO",
+        "duration": "30",
+        "text": "TOBILLO - Tobillo -  30 Min.",
+        "state": [{
+            "opened": "false",
+            "selected": "false"
+        }],
+        "children": [{
+            "id": "987",
+            "code": "TIZQ",
+            "duration": "30",
+            "text": "TIZQ - Tobillo Izquierdo -  30 Min.",
+            "state": [{
+                "opened": "false",
+                "selected": "false"
+            }],
+            "children": null,
+            "lastChild": "yes",
+            "icon": "glyphicon glyphicon-minus"
+        }, {
+            "id": "988",
+            "code": "TDER",
+            "duration": "30",
+            "text": "TDER - Tobillo Derecho -  30 Min.",
+            "state": [{
+                "opened": "false",
+                "selected": "false"
+            }],
+            "children": null,
+            "lastChild": "yes",
+            "icon": "glyphicon glyphicon-minus"
+        }],
+        "lastChild": "no",
+        "icon": ""
+    }, {
+        "id": "982",
+        "code": "RODILLA",
+        "duration": "30",
+        "text": "RODILLA - Rodilla -  30 Min.",
+        "state": [{
+            "opened": "false",
+            "selected": "false"
+        }],
+        "children": [{
+            "id": "983",
+            "code": "RDER",
+            "duration": "30",
+            "text": "RDER - Rodilla Derecha -  30 Min.",
+            "state": [{
+                "opened": "false",
+                "selected": "false"
+            }],
+            "children": null,
+            "lastChild": "yes",
+            "icon": "glyphicon glyphicon-minus"
+        }, {
+            "id": "984",
+            "code": "RIZQ",
+            "duration": "30",
+            "text": "RIZQ - Rodilla Izquierda -  30 Min.",
+            "state": [{
+                "opened": "false",
+                "selected": "false"
+            }],
+            "children": null,
+            "lastChild": "yes",
+            "icon": "glyphicon glyphicon-minus"
+        }],
+        "lastChild": "no",
+        "icon": ""
+    }],
+    "lastChild": "no",
+    "icon": ""
+}]

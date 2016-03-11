@@ -1,7 +1,12 @@
-import 'rc-tree-select/assets/index.css';
+//import 'rc-tree-select/assets/index.css';
+import '../../../assets/jquery/tree/themes/proton/style.css';
 import React from 'react';
-import TreeSelect from 'rc-tree-select';
-import { gData } from 'rc-tree-select/lib/util.js';
+//import  '../../../assets/jquery/tree/jstree.js';
+import '../../../assets/jquery/tree/jstree.js';
+//import data from './TreeData.json';
+import FieldSet from './FieldSet.jsx';
+//import TreeSelect from 'rc-tree-select';
+//import { gData } from './TreeData.js';
 import './Tree.css';
 
 const TreeField = React.createClass({
@@ -11,28 +16,69 @@ const TreeField = React.createClass({
             multipleValue: []
         };
     },
+    componentDidMount() {
+        $('#examsTree').jstree({
+            'core': {
+                'data': [{
+                    'id': '641',
+                    'code': '0403001',
+                    'duration': '30',
+                    'text': '0403001 -  Cerebro -  30 Min.',
+                    'state': [{
+                        'opened': 'false',
+                        'selected': 'false'
+                    }],
+                    'children': null,
+                    'lastChild': 'yes',
+                    'icon': 'glyphicon glyphicon-minus'
+                }],
+                'themes': {
+                    'name': 'proton',
+                    'responsive': true
+                }
+            },
+            'plugins': ['checkbox', 'search', 'sort'],
+            'search': { 'show_only_matches': true }
+        });
+        $('#searchExam').keyup(() => {
+            const to = setTimeout(() => {
+                const v = $('#searchExam').val();
+                $('#examsTree').jstree(true).search(v);
+            }, 250);
+        });
+        $('#examsButton').click(() => {
+            $('.listContainer').show();
+        });
+        $(document).mousedown((e) => {
+            var listContainer = $('.listContainer');
+            if (!listContainer.is(e.target) && listContainer.has(e.target).length === 0) {
+                listContainer.hide();
+            }
+        });
+    },
     onChange(value) {
-        console.log('onChange', value);
-        this.setState({value});
+        this.setState({ value });
     },
     onMultipleChange(value) {
-        console.log('onMultipleChange', value);
-        this.setState({multipleValue: value});
+        this.setState({ multipleValue: value });
     },
     render() {
         return (
-            <div style={{margin: 20}}>
-                <TreeSelect style={{width: 300}}
+            <FieldSet></FieldSet>
+            /*<div style={{margin: 20}}>
+                <TreeSelect
+                    id='examTree'
+                    style={{width: 300}}
                     dropdownStyle={{maxHeight: 200, overflow: 'auto'}}
                     treeData={gData} treeLine
                     value={this.state.value}
                     treeDefaultExpandAll
                     placeholder={<i>Holi</i>}
-                    searchPlaceholder='please search'
+                    searchPlaceholder='Examenes Qlos'
                     treeNodeFilterProp='title'
                     treeCheckable
                     onChange={this.onChange} />
-            </div>
+            </div>*/
         );
     }
 });

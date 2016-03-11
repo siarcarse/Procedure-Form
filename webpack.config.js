@@ -22,11 +22,7 @@ const common = {
         app: PATHS.app
     },
     resolve: {
-        extensions: ['', '.jsx', '.scss', '.js', '.json', 'css'], // along the way, subsequent file(s) to be consumed by webpack
-        modulesDirectories: [
-            'node_modules',
-            path.resolve(__dirname, './node_modules')
-        ]
+        extensions: ['', '.jsx', '.js'], // along the way, subsequent file(s) to be consumed by webpack
     },
     output: {
         path: PATHS.build,
@@ -38,19 +34,29 @@ const common = {
         loaders: [{
             test: /\.jsx?$/,
             loaders: ['babel?cacheDirectory'],
-            include: PATHS.app
+            include: PATHS.app,
+            exclude: /node_modules/
         }, {
-            test: /(\.scss|\.css)$/,
-            loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap')
+            test: /\.css$/, // Only .css files
+            loader: 'style!css' // Run both loaders
         }, {
-            test: /\.scss$/,
-            loaders: ['style', 'css', 'sass'],
-            include: PATHS.style
-        }],
-        preLoaders: [{
-            test: /\.jsx?$/,
-            loaders: ['eslint', 'jscs'],
-            include: PATHS.app
+            test: /\.(png|jpg|gif)$/,
+            loader: "url-loader?limit=8192&name=/images/[hash].[ext]"
+        }, {
+            test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+            loader: "url?limit=10000&mimetype=application/font-woff&name=/fonts/[hash].[ext]"
+        }, {
+            test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+            loader: "url?limit=10000&mimetype=application/font-woff&name=/fonts/[hash].[ext]"
+        }, {
+            test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+            loader: "url?limit=10000&mimetype=application/octet-stream&name=/fonts/[hash].[ext]"
+        }, {
+            test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+            loader: "file?name=/fonts/[hash].[ext]"
+        }, {
+            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+            loader: "url?limit=10000&mimetype=image/svg+xml&name=/fonts/[hash].[ext]"
         }]
     }
 };
@@ -68,8 +74,20 @@ if (TARGET === 'start' || !TARGET) {
             stats: 'errors-only',
 
             // Parse host and port from env so this is easy to customize.
-            host: process.env.HOST,
+            host: '0.0.0.0',
             port: process.env.PORT
+        },
+        module: {
+            loaders: [{
+                test: /\.(scss|sass)$/,
+                loader: TARGET === "build" ? ExtractTextPlugin.extract("sass-loader") : "sass-loader",
+                include: PATHS.app
+            }],
+            preLoaders: [{
+                test: /\.jsx?$/,
+                loaders: ['eslint', 'jscs'],
+                include: PATHS.app
+            }]
         },
         postcss: [autoprefixer],
         plugins: [
@@ -77,6 +95,10 @@ if (TARGET === 'start' || !TARGET) {
             new webpack.NoErrorsPlugin(),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('development')
+            }),
+            new webpack.ProvidePlugin({
+                $: "jquery",
+                jQuery: "jquery"
             }),
             new webpack.HotModuleReplacementPlugin(),
             new NpmInstallPlugin({
@@ -100,16 +122,21 @@ if (TARGET === 'build') {
     module.exports = merge(common, {
         postcss: [autoprefixer],
         plugins: [
-            new ExtractTextPlugin('example.css', { allChunks: true }), // compiled css (single file only)
+            new ExtractTextPlugin('example.css', { allChunks: false }), // compiled css (single file only)
             new webpack.NoErrorsPlugin(),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('development')
+            }),
+            new webpack.ProvidePlugin({
+                $: "jquery",
+                jQuery: "jquery"
             }),
             new HtmlWebpackPlugin({
                 template: 'node_modules/html-webpack-template/index.ejs',
                 title: 'Kanban app',
                 appMountId: 'app',
-                inject: false
+                inject: false,
+                mobile: true
             }),
             new webpack.optimize.CommonsChunkPlugin({
                 name: "app",
